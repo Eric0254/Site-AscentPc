@@ -62,25 +62,20 @@
     <div class="row mt-3">
       <div class="col-lg-5 col-md-12 col-12">
         <div class="zoom-img">
-          <img class="img-fluid w-100"
-            src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
-            id="Mainimg" alt="">
+          <img class="img-fluid w-100" src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg" id="Mainimg" alt="">
         </div>
         <div class="small-img-group">
           <div class="small-img-col">
-            <img
-              src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
-              width="100%" class="small-img" alt="">
+            <img src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_2_7cafc706019e5c176ca79b852197d483.jpg" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
           </div>
           <div class="small-img-col">
-            <img
-              src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
-              width="100%" class="small-img" alt="">
+            <img src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_3_719d1d76527a44b6d0af13f66110c9ef.jpg" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
           </div>
           <div class="small-img-col">
-            <img
-              src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
-              width="100%" class="small-img" alt="">
+            <img src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_2_7cafc706019e5c176ca79b852197d483.jpg" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
+          </div>
+          <div class="small-img-col">
+            <img src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
           </div>
         </div>
       </div>
@@ -91,22 +86,22 @@
         <button class="mt-3 btn-text comprar-btn">Comprar Agora</button>
         <h4 class="mt-5 mb-3">Sobre o Produto</h4>
         <span>Fone de Ouvido Headset Gamer da marca Havit, modelo H2016d, uma das marcas mais conceituadas em game
-
+  
           Este modelo conta leds nas laterais na cor RGB que mudam de cor aleatoriamente ao ser ligado a uma porta USB.
-
+  
           Conta com grandes speakers de 50mm calibrados com sim surround stereo e graves fortes, excelente qualidade de
           áudio.
-
+  
           O microfone super sensível proporciona uma comunicação em equipe mais efetiva. Ele é flexível e pose ser
           posicionado de acordo com as suas preferências.
-
+  
           O ajuste do volume pode ser realizado direto pelo fone pela rodinha na própria estrutura do fone.
-
+  
           Conta com um cabo longo de 2.0 metros de comprimento, que vão te proporcionar mais mobilidade e conforto.
-
+  
           O plug do fone é do tipo P2 + USB, sendo que o P2 de 3.5mm é para o fone e microfone e o USB para a iluminação
           em LED.
-
+  
           Para usar no PC basta conectar as duas vias P2 nas entrada de áudio e microfone do seu PC respectivamente.
           Caso queira usar no celular ou videogame vai precisa de um adaptador (não incluso)</span>
       </div>
@@ -123,6 +118,10 @@
         zoomImg.classList.toggle("zoomed");
       });
     });
+    function changeMainImage(img) {
+    var mainImg = document.getElementById("Mainimg");
+    mainImg.src = img.src;
+  }
   </script>
 
 
