@@ -1,8 +1,8 @@
 <?php
 // Configurar a conexão com o banco de dados
-$host = 'seu-host';
-$usuario = 'seu-usuario';
-$senha = 'sua-senha';
+$host = 'root';
+$usuario = 'root';
+$senha = 'root';
 $banco = 'seu-banco';
 
 // Conectar ao banco de dados (usando MySQLi neste exemplo)
