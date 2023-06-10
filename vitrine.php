@@ -1,87 +1,153 @@
 <?php
-// Configurar a conexão com o banco de dados
-$host = '127.0.0.1:3306';
-$usuario = 'root';
-$senha = '';
-$banco = 'seu_banco';
+// Fazer a conexão com o banco de dados (substitua as informações conforme o seu banco de dados)
+$servername = "127.0.0.1:3306";
+$username = "root";
+$password = "";
+$dbname = "seu_banco";
 
-// Conectar ao banco de dados (usando MySQLi neste exemplo)
-$conn = new mysqli($host, $usuario, $senha, $banco);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar a conexão
+// Verificar se a conexão foi estabelecida com sucesso
 if ($conn->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
+    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-// Recuperar os dados dos produtos do banco de dados
-$sql = "SELECT * FROM produtos";
-$resultado = $conn->query($sql);
+$id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" está definido na URL
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AscentPc</title>
+  <link rel="shortcut icon" href="img/LogoLoja.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="img/LogoLoja.png" type="image/x-icon" />
-  <title>AscentPc</title>
+  <link rel="shortcut icon" href="imagens/car-card.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/587541520f.js" crossorigin="anonymous"></script>
 </head>
-<body>
-<section class="container">
-  <div class="row mt-3">
-    <div class="col-lg-5 col-md-12 col-12">
-      <div class="zoom-img">
-        <img class="img-fluid w-100" src="<?php echo $produtoAtual['imagem']; ?>" id="Mainimg" alt="">
-      </div>
-      <div class="small-img-group">
-        <?php
-        // Exibir as imagens dos produtos
-        if ($resultado->num_rows > 0) {
-          while ($row = $resultado->fetch_assoc()) {
-            echo '<div class="small-img-col">';
-            echo '<a href="vitrine.php?produto=' . $row['id'] . '">';
-            echo '<img src="' . $row['imagem'] . '" width="100%" class="small-img" alt="">';
-            echo '</a>';
-            echo '</div>';
-          }
-        } else {
-          echo "Nenhum produto encontrado.";
-        }
-        ?>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-12 col-12">
-      <!-- Exibir as informações do produto selecionado -->
-      <?php
-      if (isset($_GET['produto'])) {
-        $produtoId = $_GET['produto'];
-        // Recuperar as informações do produto selecionado
-        $sqlProduto = "SELECT * FROM produtos WHERE id = $produtoId";
-        $resultadoProduto = $conn->query($sqlProduto);
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a href="index.html">
+          <div class="rover"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link vd" href="contato.html">Contato</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Departamentos
+                </a>
+                <ul class="dropdown-menu vd">
+                  <li><a class="dropdown-item vd" href="#">Computadores</a></li>
+                  <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
+                </ul>
+              </li>
 
-        if ($resultadoProduto->num_rows > 0) {
-          $produtoAtual = $resultadoProduto->fetch_assoc();
-          echo '<h6>Home / Produto</h6>';
-          echo '<h3 class="py-4">' . $produtoAtual['nome'] . '</h3>';
-          echo '<h2>' . $produtoAtual['preco'] . '</h2>';
-          echo '<button class="mt-3 btn-text comprar-btn">Comprar Agora</button>';
-          echo '<h4 class="mt-5 mb-5">Sobre o Produto</h4>';
-          echo '<span>' . $produtoAtual['descricao'] . '</span>';
-        } else {
-          echo "Produto não encontrado.";
-        }
-      }
-      ?>
-    </div>
-  </div>
-</section>
+            </ul>
+            <form class="d-flex" role="search">
+              <a type="button" class="btn btn-text btn-up btn-sm " href="login.html">
+                <i class="fas fa-user pd"></i>Login
+              </a>
+            </form>
+          </div>
+      </div>
+    </nav>
+  </header>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mainImg = document.getElementById("Mainimg");
+      const zoomImg = document.querySelector(".zoom-img");
+
+      zoomImg.addEventListener("click", function () {
+        zoomImg.classList.toggle("zoomed");
+      });
+    });
+    function changeMainImage(img) {
+    var mainImg = document.getElementById("Mainimg");
+    mainImg.src = img.src;
+  }
+  </script>
+<body>
+  
+</body>
+</html>
 
 <?php
+if ($id !== null) {
+    // Consulta para obter as informações do produto
+    $sql = "SELECT nome, preco, imagem, imagem2, imagem3, imagem4, descricao FROM produtos WHERE id = $id";
+
+    $result = $conn->query($sql);
+
+    if ($result !== false && $result->num_rows > 0) {
+        // Exibir as informações do produto
+        $row = $result->fetch_assoc();
+        
+        echo '<section class="container">
+        <div class="row mt-3">
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="zoom-img">
+              <img class="img-fluid w-100" src="' . $row["imagem"] . '" id="Mainimg" alt="">
+            </div>
+            <div class="small-img-group">
+              <div class="small-img-col">
+                <img src="' . $row["imagem2"] . '" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
+              </div>
+              <div class="small-img-col">
+                <img src="' . $row["imagem3"] . '" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
+              </div>
+              <div class="small-img-col">
+                <img src="' . $row["imagem4"] . '" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
+              </div>
+              <div class="small-img-col">
+                <img src="' . $row["imagem"] . '" width="100%" class="small-img" alt="" onclick="changeMainImage(this)">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12">
+            <h6 class="mt-">Home / Produto</h6>
+            <h3 class="py-4">' . $row["nome"] . '</h3>
+            <h2>R$ ' . $row["preco"] . '</h2>
+            <button class="mt-3 btn-text comprar-btn">Comprar Agora</button>
+            <h4 class="mt-5 mb-3">Sobre o Produto</h4>
+            <span>' . $row["descricao"] . '</span>
+          </div>
+        </div>
+      </section>';
+    } else {
+        echo "Nenhum produto encontrado.";
+    }
+} else {
+    echo "ID do produto não especificado na URL.";
+}
+
+?>
+<html>
+<footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; Eric, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</html>
+<?php
+
 // Fechar a conexão com o banco de dados
 $conn->close();
 ?>
