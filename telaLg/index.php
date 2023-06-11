@@ -132,7 +132,7 @@
 				const request = await fetch('../controller/login/logar.php', config);
 				const response = await request.json();
 				if (response.status === 1) {
-					window.location.href = '../index.html';
+					window.location.href = '../index.php';
 				} else {
 					Swal.fire({
 						title: 'Atenção!',

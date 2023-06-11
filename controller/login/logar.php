@@ -16,3 +16,5 @@ $usuarioModel->senha = $senha;
 $retorno = $usuarioModel->logar();
 // saida
 echo json_encode($retorno);
+
+
