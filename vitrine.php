@@ -9,13 +9,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar se a conexão foi estabelecida com sucesso
 if ($conn->connect_error) {
-    die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+  die("Falha na conexão com o banco de dados: " . $conn->connect_error);
 }
 
 $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" está definido na URL
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,93 +34,100 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
   <script src="https://kit.fontawesome.com/587541520f.js" crossorigin="anonymous"></script>
 </head>
 <header data-bs-theme="dark">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a href="index.php">
-      <div class="rover"></div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link vd" href="contato.html">Contato</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Departamentos
-            </a>
-            <ul class="dropdown-menu vd">
-              <li><a class="dropdown-item vd" href="#">Computadores</a></li>
-              <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
-            </ul>
-          </li>
-        </ul>
-        <?php
-        session_start();
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a href="index.php">
+        <div class="rover"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link vd" href="contato.html">Contato</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Departamentos
+              </a>
+              <ul class="dropdown-menu vd">
+                <li><a class="dropdown-item vd" href="#">Computadores</a></li>
+                <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
+              </ul>
+            </li>
+          </ul>
+          <?php
+          session_start();
 
-        if (isset($_SESSION['logado']) && $_SESSION['logado']) {
+          if (isset($_SESSION['logado']) && $_SESSION['logado']) {
             if ($_SESSION['usuario'] == 'admin@gmail.com') {
-                echo '<form class="d-flex" role="search">
+              echo '<form class="d-flex" role="search">
                           <a type="button" class="btn btn-text btn-up btn-sm" href="listarprodutos.php">
                             <i class="fas fa-edit pd"></i>Editar-Produtos
                           </a>
                         </form>';
             } else {
-                echo '<form class="d-flex" role="search">
+              echo '<form class="d-flex" role="search">
                           <a type="button" class="btn btn-text btn-up btn-sm">
                             <i class="fas fa-user pd"></i>' . $_SESSION['usuario'] . '
                           </a>
                         </form>';
+                        echo '<form class="d-flex justify-content-end" role="search">
+                        <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+                          <i class="fas fa-sign-out-alt pd"></i> Logout
+                        </a>
+                      </form>';
             }
-        } else {
+          } else {
             echo '<form class="d-flex" role="search">
                       <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/index.php">
                         <i class="fas fa-user pd"></i>Login
                       </a>
                     </form>';
-        }
-        ?>
-      </div>
-  </div>
-</nav>
-  </header>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const mainImg = document.getElementById("Mainimg");
-      const zoomImg = document.querySelector(".zoom-img");
+          }
+          ?>
+        </div>
+    </div>
+  </nav>
+</header>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainImg = document.getElementById("Mainimg");
+    const zoomImg = document.querySelector(".zoom-img");
 
-      zoomImg.addEventListener("click", function () {
-        zoomImg.classList.toggle("zoomed");
-      });
+    zoomImg.addEventListener("click", function () {
+      zoomImg.classList.toggle("zoomed");
     });
-    function changeMainImage(img) {
+  });
+  function changeMainImage(img) {
     var mainImg = document.getElementById("Mainimg");
     mainImg.src = img.src;
   }
-  </script>
+</script>
+
 <body>
-  
+
 </body>
+
 </html>
 
 <?php
 if ($id !== null) {
-    // Consulta para obter as informações do produto
-    $sql = "SELECT nome, preco, imagem, imagem2, imagem3, imagem4, descricao FROM produtos WHERE id = $id";
+  // Consulta para obter as informações do produto
+  $sql = "SELECT nome, preco, imagem, imagem2, imagem3, imagem4, descricao FROM produtos WHERE id = $id";
 
-    $result = $conn->query($sql);
+  $result = $conn->query($sql);
 
-    if ($result !== false && $result->num_rows > 0) {
-        // Exibir as informações do produto
-        $row = $result->fetch_assoc();
-        
-        echo '<section class="container">
+  if ($result !== false && $result->num_rows > 0) {
+    // Exibir as informações do produto
+    $row = $result->fetch_assoc();
+
+    echo '<section class="container">
         <div class="row mt-3">
           <div class="col-lg-5 col-md-12 col-12">
             <div class="zoom-img">
@@ -150,40 +158,38 @@ if ($id !== null) {
           </div>
         </div>
       </section>';
-    } else {
-        echo "Nenhum produto encontrado.";
-    }
+  } else {
+    echo "Nenhum produto encontrado.";
+  }
 } else {
-    echo "ID do produto não especificado na URL.";
+  echo "ID do produto não especificado na URL.";
 }
 
 ?>
 <html>
 <div class="blockcode">
-  
+
   <footer class="shadow">
-    <div
-      class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap"
-      style="width: 80%"
-    >
+    <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
       <a href="#" class="d-flex align-items-center p-0 text-dark">
         <img alt="logo" src="img/LogoNav.gif" width="75px" />
         <span class="ms-4 h5 font-weight-bold">AscentPc</span>
       </a>
       <small>&copy; AscentPc, 2023. Todos os direitos reservados.</small>
       <div>
-      <button class="btn btn-dark btn-flat p-2">
-                <i class="fab fa-facebook"></i>
-              </button>
-              <button class="btn btn-dark btn-flat p-2">
-                <i class="fab fa-twitter"></i>
-              </button>
-              <button class="btn btn-dark btn-flat p-2">
-                <i class="fab fa-instagram"></i>
-              </button>
-     
+        <button class="btn btn-dark btn-flat p-2">
+          <i class="fab fa-facebook"></i>
+        </button>
+        <button class="btn btn-dark btn-flat p-2">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="btn btn-dark btn-flat p-2">
+          <i class="fab fa-instagram"></i>
+        </button>
+
   </footer>
 </div>
+
 </html>
 <?php
 

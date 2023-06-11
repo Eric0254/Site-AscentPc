@@ -11,7 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <!--===============================================================================================-->
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
   <!--===============================================================================================-->
@@ -25,60 +25,66 @@
 <body>
   <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a href="index.php">
-      <div class="rover"></div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link vd" href="contato.html">Contato</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Departamentos
-            </a>
-            <ul class="dropdown-menu vd">
-              <li><a class="dropdown-item vd" href="#">Computadores</a></li>
-              <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
+      <div class="container-fluid">
+        <a href="index.php">
+          <div class="rover"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link vd" href="contato.html">Contato</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Departamentos
+                </a>
+                <ul class="dropdown-menu vd">
+                  <li><a class="dropdown-item vd" href="#">Computadores</a></li>
+                  <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-        <?php
-        session_start();
+            <?php
+            session_start();
 
-        if (isset($_SESSION['logado']) && $_SESSION['logado']) {
-            if ($_SESSION['usuario'] == 'admin@gmail.com') {
+            if (isset($_SESSION['logado']) && $_SESSION['logado']) {
+              if ($_SESSION['usuario'] == 'admin@gmail.com') {
                 echo '<form class="d-flex" role="search">
                           <a type="button" class="btn btn-text btn-up btn-sm" href="listarprodutos.php">
                             <i class="fas fa-edit pd"></i>Editar-Produtos
                           </a>
                         </form>';
-            } else {
+              } else {
                 echo '<form class="d-flex" role="search">
                           <a type="button" class="btn btn-text btn-up btn-sm">
                             <i class="fas fa-user pd"></i>' . $_SESSION['usuario'] . '
                           </a>
                         </form>';
-            }
-        } else {
-            echo '<form class="d-flex" role="search">
+                        echo '<form class="d-flex justify-content-end" role="search">
+                        <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+                          <i class="fas fa-sign-out-alt pd"></i> Logout
+                        </a>
+                      </form>';
+              }
+            } else {
+              echo '<form class="d-flex" role="search">
                       <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/index.php">
                         <i class="fas fa-user pd"></i>Login
                       </a>
                     </form>';
-        }
-        ?>
+            }
+            ?>
+          </div>
       </div>
-  </div>
-</nav>
+    </nav>
   </header>
   <main>
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -143,7 +149,8 @@
           <img class="bd-placeholder-img rounded-circle ajd"
             src="https://gifs.eco.br/wp-content/uploads/2022/10/gifs-de-pc-gamer-17.gif" alt="Departamentos">
           <h2 class="fw-normal vd">DEPARTAMENTOS</h2>
-          <p  class="vd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ut beatae minus ipsum deleniti rem
+          <p class="vd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ut beatae minus ipsum
+            deleniti rem
             tenetur fugiat sunt atque iusto natus quos quasi mollitia dolore, ab officiis ducimus nostrum hic kwe esd ud
             jsjdus jjdu assss ewwe q qw dsd w.</p>
           <p><a class="btn btn-secondary deta btn-text" href="produtos.html">Veja detalhes &raquo;</a></p>
@@ -152,7 +159,8 @@
           <img class="bd-placeholder-img rounded-circle Obj"
             src="https://i.pinimg.com/originals/b1/69/f0/b169f06545da9b2e92bfa8cffc9e7a95.gif" alt="Contatos">
           <h2 class="fw-normal vd">CONTATOS</h2>
-          <p class="vd">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora facilis accusamus quis quae blanditiis
+          <p class="vd">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora facilis accusamus quis quae
+            blanditiis
             iste dolores eos non fugiat deleniti provident cupiditate, quisquam delectus necessitatibus. Impedit debitis
             ratione tempora distinctio.</p>
           <p><a class="btn btn-secondary deta btn-text" href="contato.html">Veja detalhes &raquo;</a></p>
@@ -164,137 +172,130 @@
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
               <a class="deco" href="vitrine.php?id=6">
-              <div class="card shadow-sm rounded bd1">
-                <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1394691-1000-1000/1.png?v=638181293355430000"
-                  class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
-                  preserveAspectRatio="xMidYMid slice" focusable="false" alt="PC Gamer Intel G6400">
-                <div class="card-body">
-                  <p class="card-text">PC Gamer Intel G6400 com placa de vídeo integrada SSD 240GB 500W 80 Plus</p>
-                  <p class="card-text">R$ 2.500,00 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn"> 
-                        <i class="fas fa-shopping-cart pd"></i> Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1394691-1000-1000/1.png?v=638181293355430000"
+                    class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" alt="PC Gamer Intel G6400">
+                  <div class="card-body">
+                    <p class="card-text">PC Gamer Intel G6400 com placa de vídeo integrada SSD 240GB 500W 80 Plus</p>
+                    <p class="card-text">R$ 2.500,00 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i> Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
             </div>
 
             <div class="col">
               <a class="deco" href="vitrine.php?id=5">
-              <div class="card shadow-sm rounded bd1">
-                <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1415392-1000-1000/1.png?v=638213363447100000"
-                  class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
-                 preserveAspectRatio="xMidYMid slice" focusable="false"
-                  alt="Pc Gamer AMD Ryzen 5 5600G">
-                <div class="card-body">
-                  <p class="card-text">
-                    Pc Gamer AMD Ryzen 5 5600G 16GB (Radeon Vega 7 Integrado) SSD 240GB </p>
-                  <p class="card-text">R$ 4.500,00 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
-                        <i class="fas fa-shopping-cart pd"></i> Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1415392-1000-1000/1.png?v=638213363447100000"
+                    class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" alt="Pc Gamer AMD Ryzen 5 5600G">
+                  <div class="card-body">
+                    <p class="card-text">
+                      Pc Gamer AMD Ryzen 5 5600G 16GB (Radeon Vega 7 Integrado) SSD 240GB </p>
+                    <p class="card-text">R$ 4.500,00 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i> Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </a>
             </div>
 
             <div class="col">
               <a class="deco" href="vitrine.php?id=4">
-              <div class="card shadow-sm rounded bd1">
-                <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1415626-1000-1000/1.png?v=638213813998400000"
-                  class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
-                  preserveAspectRatio="xMidYMid slice" focusable="false"
-                  alt="PC Gamer AMD Ryzen 5 4500">
-                <div class="card-body">
-                  <p class="card-text">PC Gamer AMD Ryzen 5 4500 16GB (RTX 3050 8GB) SSD 240GB 500W 80 Plus</p>
-                  <p class="card-text">R$ 3.400,00 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
-                        <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img src="https://shopinfo.vteximg.com.br/arquivos/ids/1415626-1000-1000/1.png?v=638213813998400000"
+                    class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" alt="PC Gamer AMD Ryzen 5 4500">
+                  <div class="card-body">
+                    <p class="card-text">PC Gamer AMD Ryzen 5 4500 16GB (RTX 3050 8GB) SSD 240GB 500W 80 Plus</p>
+                    <p class="card-text">R$ 3.400,00 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </a>
             </div>
             <div class="col">
               <a class="deco" href="vitrine.php?id=2">
-              <div class="card shadow-sm rounded bd1">
-                <img
-                  src="https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/pro-x-superlight-black-gallery-1.png?v=1"
-                  width="100%" height="250px" role="img" 
-                  preserveAspectRatio="xMidYMid slice" focusable="false" alt="Pro X Superlight">
-                <div class="card-body">
-                  <p class="card-text">Mouse Gamer sem fio Pro X Superlight vm 910-006783 Logitech G</p>
-                  <p class="card-text">R$ 899,00 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
-                        <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img
+                    src="https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight/pro-x-superlight-black-gallery-1.png?v=1"
+                    width="100%" height="250px" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"
+                    alt="Pro X Superlight">
+                  <div class="card-body">
+                    <p class="card-text">Mouse Gamer sem fio Pro X Superlight vm 910-006783 Logitech G</p>
+                    <p class="card-text">R$ 899,00 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </a>
             </div>
             <div class="col">
               <a class="deco" href="vitrine.php?id=1">
-              <div class="card shadow-sm rounded bd1">
-                <img
-                  src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
-                  class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
-                   preserveAspectRatio="xMidYMid slice" focusable="false"
-                  alt="Headset Gamer Havit">
-                <div class="card-body">
-                  <p class="card-text">Headset Gamer Havit Gamenote H2016d RGB Preto</p>
-                  <p class="card-text">R$ 240,00 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
-                        <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img
+                    src="https://static3.tcdn.com.br/img/img_prod/670412/fone_de_ouvido_headset_gamer_havit_h2016d_led_usb_p2_3_5mm_3733_1_8f1f9274d754df1926ecb97dd6021259.jpg"
+                    class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" alt="Headset Gamer Havit">
+                  <div class="card-body">
+                    <p class="card-text">Headset Gamer Havit Gamenote H2016d RGB Preto</p>
+                    <p class="card-text">R$ 240,00 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </a>
             </div>
             <div class="col">
               <a class="deco" href="vitrine.php?id=3">
-              <div class="card shadow-sm rounded bd1">
-                <img src="https://cdn.shopify.com/s/files/1/0277/2507/0400/files/1_345x@2x.png?v=1683422343"
-                  class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
-                  preserveAspectRatio="xMidYMid slice" focusable="false"
-                  alt="Ninjutso NPC Control">
-                <div class="card-body">
-                  <p class="card-text">Ninjutso NPC Control Mousepad Highend performance</p>
-                  <p class="card-text">R$ 198,99 á vista</p>
-                  <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn-group ">
-                      <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
-                        <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                <div class="card shadow-sm rounded bd1">
+                  <img src="https://cdn.shopify.com/s/files/1/0277/2507/0400/files/1_345x@2x.png?v=1683422343"
+                    class="bd-placeholder-img card-img-top" width="100%" height="250" role="img"
+                    preserveAspectRatio="xMidYMid slice" focusable="false" alt="Ninjutso NPC Control">
+                  <div class="card-body">
+                    <p class="card-text">Ninjutso NPC Control Mousepad Highend performance</p>
+                    <p class="card-text">R$ 198,99 á vista</p>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <div class="btn-group ">
+                        <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
+                          <i class="fas fa-shopping-cart pd"></i>Comprar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </a>
             </div>
           </div>
         </div>
       </div>
       <div class="blockcode">
-  
+
         <footer class="shadow">
-          <div
-            class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap"
-            style="width: 80%"
-          >
+          <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
             <a href="#" class="d-flex align-items-center p-0 text-dark">
               <img alt="logo" src="img/LogoNav.gif" width="75px" />
               <span class="ms-4 h5 font-weight-bold">AscentPc</span>
@@ -310,7 +311,7 @@
               <button class="btn btn-dark btn-flat p-2">
                 <i class="fab fa-instagram"></i>
               </button>
-           
+
         </footer>
       </div>
   </main>
