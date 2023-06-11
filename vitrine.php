@@ -141,10 +141,31 @@ if ($id !== null) {
 
 ?>
 <html>
-<footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; Eric, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<div class="blockcode">
+  
+  <footer class="shadow">
+    <div
+      class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap"
+      style="width: 80%"
+    >
+      <a href="#" class="d-flex align-items-center p-0 text-dark">
+        <img alt="logo" src="img/LogoNav.gif" width="75px" />
+        <span class="ms-4 h5 font-weight-bold">AscentPc</span>
+      </a>
+      <small>&copy; AscentPc, 2023. Todos os direitos reservados.</small>
+      <div>
+      <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-facebook"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-instagram"></i>
+              </button>
+     
   </footer>
+</div>
 </html>
 <?php
 
