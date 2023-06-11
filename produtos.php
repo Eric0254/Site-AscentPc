@@ -10,230 +10,128 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="view/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="view/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="view/css/sweetalert2.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Produtos</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="imagens/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="imagens/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="imagens/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="imagens/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="imagens/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="imagens/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="imagens/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="imagens/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="imagens/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="imagens/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <!--===============================================================================================-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--===============================================================================================-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!--===============================================================================================-->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <!--===============================================================================================-->
+  <link rel="stylesheet" href="styles.css">
+  <!--===============================================================================================-->
+  <link rel="shortcut icon" href="img/LogoLoja.png" type="image/x-icon" />
+  <!--===============================================================================================-->
+  <!-- Inclua a biblioteca jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Inclua o arquivo SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.all.min.js"></script>
+<!-- Inclua o arquivo Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <title>AscentPc</title>
 </head>
-<style>
-    .container-fluid {
-        padding: 0;
-    }
 
-    .caixa {
-        border: 0.1rem solid #000;
 
-    }
-
-    #mainSlider .carousel-inner,
-    #mainSlider .carousel-item {
-        height: 70vh;
-    }
-
-    #mainSlider .carousel-caption {
-        top: 30%;
-    }
-
-    #mainSlider .carousel-caption h2 {
-        font-size: 50px;
-        margin-bottom: 30px;
-    }
-
-    #mainSlider .carousel-caption p {
-        font-size: 22px;
-        font-weight: 300;
-        margin-bottom: 100px;
-        color: #fff;
-    }
-
-    .main-btn {
-        background-color: #B22222;
-        color: #fff;
-        text-transform: uppercase;
-        width: 200px;
-        height: 60px;
-        padding: 10px 20px;
-        border-radius: 30px;
-        border: 3px solid transparent;
-        transition: .5s;
-    }
-
-    .main-btn:hover {
-        text-decoration: none;
-        color: #fff;
-        background-color: transparent;
-        border-color: #fff;
-    }
-
-    .carousel-indicators .active {
-        background-color: #B22222;
-
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .row {
-        margin: 0;
-    }
-
-    .container {
-        padding: 70px 0;
-    }
-
-    p,
-    li {
-        color: red;
-        font-size: 10px;
-    }
-
-    header,
-    .navbar {
-        background-color: red;
-    }
-
-    #nav-container {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .navbar-brand {
-        padding: 0;
-        color: #fff;
-    }
-
-    .navbar-brand:hover {
-        color: red;
-    }
-
-    .navbar-links a {
-        color: #fff;
-    }
-
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding: 1rem .8rem;
-        color: white;
-    }
-
-    .btnl {
-        color: black;
-    }
-
-    .fundo {
-        background-color: black;
-        color: #fff;
-        border: 10px 10px 10px 10px;
-        border-color: red;
-    }
-
-    .imagensL {
-        border-radius: 40px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
-        color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background-color .3s;
-        border: 1px solid black;
-        margin: 0 4px;
-    }
-
-    .pagination a.active {
-        background-color: red;
-        color: white;
-        border: 1px solid black;
-    }
-
-    .pagination a:hover:not(.active) {
-        background-color: #ddd;
-    }
-</style>
 
 <body>
     <div class="container-fluid">
-        <header class="">
-            <div class="container" id="nav-container">
-                <nav class="navbar navbar-expand-lg">
-                    <a href="index.php"><img src="imagens/logo.png" alt="ByBikes" style="width:260px; height:260px; margin-left:-230px; margin-top:-85px; margin-bottom: -65px"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link navbar-brand" id="home-menu" href="index.php"> Home</a>
-                            <a class="nav-item nav-link navbar-brand" id="bikes-menu" href="produtos.php"> Produtos</a>
-                            <a class="nav-item nav-link navbar-brand" id="services-menu" href="servicos.php"> Serviços</a>
-                            <?php if (!isset($_SESSION) || !isset($_SESSION['id']) || $_SESSION['id'] !== session_id()) {
-                                echo '<a class="nav-item nav-link navbar-brand" id="login-menu" href="../Pi/telaLg/index.php">Login</a>';
-                            } ?>
-                        </div>
-                    </div>
-                </nav>
-        </header>
+    <header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a href="index.php">
+          <div class="rover"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link vd" href="contato.html">Contato</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Departamentos
+                </a>
+                <ul class="dropdown-menu vd">
+                  <li><a class="dropdown-item vd" href="produtos.php">Computadores</a></li>
+                  <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
+                </ul>
+              </li>
+            </ul>
+            <?php
+           
+
+            if (isset($_SESSION['logado']) && $_SESSION['logado']) {
+              if ($_SESSION['usuario'] == 'admin@gmail.com') {
+                echo '<form class="d-flex" role="search">
+                          <a type="button" class="btn btn-text btn-up btn-sm" href="listarProdutos.php">
+                            <i class="fas fa-edit pd"></i>Editar-Produtos
+                          </a>
+                        </form>';
+                echo '<form class="d-flex justify-content-end" role="search">
+                        <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+                          <i class="fas fa-sign-out-alt pd"></i> Logout
+                        </a>
+                      </form>';
+              } else {
+                echo '<form class="d-flex justify-content-end float-end" role="search">
+        <div class="btn-group">
+          <a type="button" class="btn btn-text btn-up btn-sm">
+            <i class="fas fa-user pd"></i>' . $_SESSION['nome_completo'] . '
+          </a>
+          <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+            <i class="fas fa-sign-out-alt pd"></i> Logout
+          </a>
+        </div>
+      </form>';
+              }
+            } else {
+              echo '<form class="d-flex" role="search">
+                      <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/index.php">
+                        <i class="fas fa-user pd"></i>Login
+                      </a>
+                    </form>';
+            }
+            ?>
+          </div>
+      </div>
+    </nav>
+  </header>
         <hr>
         <main role="main">
             <div id="conteudo-produto"></div>
         </main>
-        <hr>
-        <div class="center">
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#" class="active">1</a>
-                <a href="produtos2.php">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="produtos2.php">&raquo;</a>
-            </div>
-        </div>
-        <hr>
-        <footer>
-            <div class=" footer-content">
-                <h3>ByBikes</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam laboriosam maxime hic itaque perspiciatis quis nostrum natus quisquam pariatur architecto nulla atque molestias, officia, explicabo est nemo alias, rerum consectetur.</p>
-                <ul class="sociais">
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                <p>Feito por Gabriel Passos e Eric &copy;2022</p>
-            </div>
+        <div class="blockcode">
+
+        <footer class="shadow">
+          <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
+            <a href="#" class="d-flex align-items-center p-0 text-dark">
+              <img alt="logo" src="img/LogoNav.gif" width="75px" />
+              <span class="ms-4 h5 font-weight-bold">AscentPc</span>
+            </a>
+            <small>&copy; AscentPc, 2023. Todos os direitos reservados.</small>
+            <div>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-facebook"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button class="btn btn-dark btn-flat p-2">
+                <i class="fab fa-instagram"></i>
+              </button>
+
         </footer>
+      </div>
     </div>
     </div>
 </body>
@@ -243,11 +141,11 @@ session_start();
 <script src="https://kit.fontawesome.com/d3d6f2df1f.js" crossorigin="anonymous"></script>
 
 <script type="text/javascript" charset="utf-8">
-    function conteudo(id, nome, image, preco) {
+    function conteudo(id, nome, imagem, preco) {
         return `
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="imagens/${image}" alt="Card image cap">
+                    <img class="card-img-top" src="${imagem}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text text-dark h5"> ${nome} <BR><BR></p>
                         <p class="text-dark h5"> ${preco} </p>

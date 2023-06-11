@@ -27,7 +27,7 @@ class ProdutoModel
             $retorno['status'] = 1;
             $retorno['dados'] = $dados;
         } catch (PDOException $e) {
-            echo 'Erro ao mostrar bike pelo ID: ' . $e->getMessage();
+            echo 'Erro ao mostrar produto pelo ID: ' . $e->getMessage();
         }
         return $retorno;
     }
@@ -43,7 +43,7 @@ class ProdutoModel
             $retorno['status'] = 1;
             $retorno['dados'] = $dados;
         } catch (PDOException $e) {
-            echo 'Erro ao mostrar bike pelo ID: ' . $e->getMessage();
+            echo 'Erro ao mostrar produto pelo ID: ' . $e->getMessage();
         }
         return $retorno;
     }
@@ -62,7 +62,7 @@ class ProdutoModel
             $stmt->execute();
             $retorno['status'] = 1;
         } catch (PDOException $e) {
-            echo 'Erro ao cadastrar usuario: ' . $e->getMessage();
+            echo 'Erro ao cadastrar produto: ' . $e->getMessage();
         }
         return $retorno;
     }

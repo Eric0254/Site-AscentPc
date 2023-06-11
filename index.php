@@ -47,7 +47,7 @@
                   Departamentos
                 </a>
                 <ul class="dropdown-menu vd">
-                  <li><a class="dropdown-item vd" href="#">Computadores</a></li>
+                  <li><a class="dropdown-item vd" href="produtos.php">Computadores</a></li>
                   <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
                 </ul>
               </li>
