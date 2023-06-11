@@ -43,7 +43,7 @@ class UsuarioModel
         ];
         try {
             $stmt = $this->db->prepare('
-            SELECT id, email FROM usuarios
+            SELECT id, email, nome_completo FROM usuarios
             WHERE email = :email
             AND senha = :senha
             LIMIT 1
@@ -61,6 +61,7 @@ class UsuarioModel
                 $_SESSION['logado'] = true;
                 $_SESSION['id_usuario'] = $dado['id'];
                 $_SESSION['usuario'] = $dado['email'];
+                $_SESSION['nome_completo'] = $dado ['nome_completo'];
             }
         } catch (PDOException $ex) {
             echo 'Erro ao logar: ' . $ex->getMessage();

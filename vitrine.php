@@ -67,21 +67,27 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
           if (isset($_SESSION['logado']) && $_SESSION['logado']) {
             if ($_SESSION['usuario'] == 'admin@gmail.com') {
               echo '<form class="d-flex" role="search">
-                          <a type="button" class="btn btn-text btn-up btn-sm" href="listarprodutos.php">
+                          <a type="button" class="btn btn-text btn-up btn-sm" href="listarProdutos.php">
                             <i class="fas fa-edit pd"></i>Editar-Produtos
                           </a>
                         </form>';
-            } else {
-              echo '<form class="d-flex" role="search">
-                          <a type="button" class="btn btn-text btn-up btn-sm">
-                            <i class="fas fa-user pd"></i>' . $_SESSION['usuario'] . '
-                          </a>
-                        </form>';
-                        echo '<form class="d-flex justify-content-end" role="search">
+              echo '<form class="d-flex justify-content-end" role="search">
                         <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
                           <i class="fas fa-sign-out-alt pd"></i> Logout
                         </a>
                       </form>';
+
+            } else {
+              echo '<form class="d-flex justify-content-end float-end" role="search">
+        <div class="btn-group">
+          <a type="button" class="btn btn-text btn-up btn-sm">
+            <i class="fas fa-user pd"></i>' . $_SESSION['nome_completo'] . '
+          </a>
+          <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+            <i class="fas fa-sign-out-alt pd"></i> Logout
+          </a>
+        </div>
+      </form>';
             }
           } else {
             echo '<form class="d-flex" role="search">
