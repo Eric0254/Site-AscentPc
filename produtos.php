@@ -143,7 +143,7 @@ session_start();
   function conteudo(id, nome, imagem, preco) {
     return `
         <div class="col">
-  <a class="deco" href="vitrine.php?id=5">
+  <a class="deco" href="vitrine.php?id=${id}">
     <div class="card shadow-sm rounded bd1">
       <img class="bd-placeholder-img card-img-top" width="100%" height="300" role="img"
         preserveAspectRatio="xMidYMid slice" focusable="false" src="${imagem}" alt="Card image cap">
