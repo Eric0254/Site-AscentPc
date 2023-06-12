@@ -104,7 +104,6 @@ session_start();
         </div>
       </nav>
     </header>
-    <hr>
     <main role="main">
       <div id="conteudo-produto"></div>
     </main>
@@ -149,8 +148,8 @@ session_start();
         preserveAspectRatio="xMidYMid slice" focusable="false" src="${imagem}" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">${nome}<br><br></p>
-        <p class="text-dark">R$ ${preco}</p>
-        <div class="d-flex justify-content-between align-items-center">
+        <p class="card-text">R$ ${preco} á vista</p>
+        <div class="d-flex justify-content-center align-items-center">
           <div class="btn-group">
             <button type="button" class="btn btn-text btn-up btn-sm comprar-btn">
               <i class="fas fa-shopping-cart pd"></i> Comprar</button>
