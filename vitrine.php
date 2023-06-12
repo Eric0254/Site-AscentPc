@@ -67,12 +67,12 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
           if (isset($_SESSION['logado']) && $_SESSION['logado']) {
             if ($_SESSION['usuario'] == 'admin@gmail.com') {
               echo '<form class="d-flex" role="search">
-                          <a type="button" class="btn btn-text btn-up btn-sm" href="listarProdutos.php">
+                          <a type="button" class="btn btn-text btn-up btn-sm d-flex align-items-center justify-content-center" href="listarProdutos.php">
                             <i class="fas fa-edit pd"></i>Editar-Produtos
                           </a>
                         </form>';
               echo '<form class="d-flex justify-content-end" role="search">
-                        <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+                        <a type="button" class="btn btn-text btn-up btn-sm d-flex align-items-center justify-content-center" href="telaLg/logout.php">
                           <i class="fas fa-sign-out-alt pd"></i> Logout
                         </a>
                       </form>';
@@ -80,10 +80,10 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
             } else {
               echo '<form class="d-flex justify-content-end float-end" role="search">
         <div class="btn-group">
-          <a type="button" class="btn btn-text btn-up btn-sm">
+          <a type="button" class="btn btn-text btn-up btn-sm d-flex align-items-center justify-content-center">
             <i class="fas fa-user pd"></i>' . $_SESSION['nome_completo'] . '
           </a>
-          <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/logout.php">
+          <a type="button" class="btn btn-text btn-up btn-sm d-flex align-items-center justify-content-center" href="telaLg/logout.php">
             <i class="fas fa-sign-out-alt pd"></i> Logout
           </a>
         </div>
@@ -91,7 +91,7 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
             }
           } else {
             echo '<form class="d-flex" role="search">
-                      <a type="button" class="btn btn-text btn-up btn-sm" href="telaLg/index.php">
+                      <a type="button" class="btn btn-text btn-up btn-sm d-flex align-items-center justify-content-center" href="telaLg/index.php">
                         <i class="fas fa-user pd"></i>Login
                       </a>
                     </form>';
