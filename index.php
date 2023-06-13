@@ -36,21 +36,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+                <a class="nav-link vd" href="sobrenos.php">Sobre Nós</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link vd" href="contato.html">Contato</a>
+                <a class="nav-link vd" href="#footer">Contato</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Departamentos
-                </a>
-                <ul class="dropdown-menu vd">
-                  <li><a class="dropdown-item vd" href="produtos.php">Computadores</a></li>
-                  <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
-                </ul>
-              </li>
+              <li class="nav-item">
+                <a class="nav-link vd" href="produtos.php">Produtos
             </ul>
             <?php
             session_start();
@@ -299,7 +291,7 @@
       </div>
       <div class="blockcode">
 
-        <footer class="shadow">
+        <footer class="shadow" id="footer">
           <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
             <a href="#" class="d-flex align-items-center p-0 text-dark">
               <img alt="logo" src="img/LogoNav.gif" width="75px" />

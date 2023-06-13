@@ -49,10 +49,10 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+                  <a class="nav-link vd" href="sobrenos.php">Sobre Nós</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link vd" href="contato.html">Contato</a>
+                  <a class="nav-link vd" href="#footer">Contato</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
