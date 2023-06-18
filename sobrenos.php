@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -39,7 +43,7 @@
                 <a class="nav-link vd" href="produtos.php">Produtos
             </ul>
             <?php
-            session_start();
+    
 
             if (isset($_SESSION['logado']) && $_SESSION['logado']) {
               if ($_SESSION['usuario'] == 'admin@gmail.com') {

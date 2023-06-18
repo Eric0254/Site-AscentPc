@@ -1,4 +1,8 @@
 <?php
+session_start();
+?>
+
+<?php
 // Fazer a conexão com o banco de dados (substitua as informações conforme o seu banco de dados)
 $servername = "127.0.0.1:3306";
 $username = "root";
@@ -45,24 +49,17 @@ $id = isset($_GET["id"]) ? $_GET["id"] : null; // Verifica se o parâmetro "id" 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link vd" href="sobrenos.html">Sobre Nós</a>
+              <a class="nav-link vd" href="sobrenos.php">Sobre Nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link vd" href="contato.html">Contato</a>
+              <a class="nav-link vd" href="#footer">Contato</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Departamentos
-              </a>
-              <ul class="dropdown-menu vd">
-                <li><a class="dropdown-item vd" href="#">Computadores</a></li>
-                <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
-              </ul>
-            </li>
+            <li class="nav-item">
+                <a class="nav-link vd" href="produtos.php">Produtos
+                </li> 
           </ul>
           <?php
-          session_start();
+         
 
           if (isset($_SESSION['logado']) && $_SESSION['logado']) {
             if ($_SESSION['usuario'] == 'admin@gmail.com') {
@@ -175,7 +172,7 @@ if ($id !== null) {
 <html>
 <div class="blockcode">
 
-  <footer class="shadow">
+  <footer class="shadow" id="footer">
     <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
       <a href="#" class="d-flex align-items-center p-0 text-dark">
         <img alt="logo" src="img/LogoNav.gif" width="75px" />

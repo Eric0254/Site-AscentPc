@@ -54,16 +54,9 @@ session_start();
                 <li class="nav-item">
                   <a class="nav-link vd" href="#footer">Contato</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle vd" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Departamentos
-                  </a>
-                  <ul class="dropdown-menu vd">
-                    <li><a class="dropdown-item vd" href="produtos.php">Computadores</a></li>
-                    <li><a class="dropdown-item vd" href="#">Periféricos</a></li>
-                  </ul>
-                </li>
+                <li class="nav-item">
+                <a class="nav-link vd" href="produtos.php">Produtos
+                </li>  
               </ul>
               <?php
 
@@ -109,7 +102,7 @@ session_start();
     </main>
     <div class="blockcode">
 
-      <footer class="shadow">
+      <footer class="shadow" id = "footer">
         <div class="d-flex justify-content-between mt-3 align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
           <a href="#" class="d-flex align-items-center p-0 text-dark">
             <img alt="logo" src="img/LogoNav.gif" width="75px" />
@@ -141,10 +134,10 @@ session_start();
 <script type="text/javascript" charset="utf-8">
   function conteudo(id, nome, imagem, preco) {
     return `
-        <div class="col">
+    <div class="col">
   <a class="deco" href="vitrine.php?id=${id}">
     <div class="card shadow-sm rounded bd1">
-      <img class="bd-placeholder-img card-img-top" width="100%" height="300" role="img"
+      <img class="bd-placeholder-img card-img-top" width="100%" height="280" role="img"
         preserveAspectRatio="xMidYMid slice" focusable="false" src="${imagem}" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">${nome}<br><br></p>

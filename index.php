@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,9 +47,10 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link vd" href="produtos.php">Produtos
+                </li>  
             </ul>
             <?php
-            session_start();
+
 
             if (isset($_SESSION['logado']) && $_SESSION['logado']) {
               if ($_SESSION['usuario'] == 'admin@gmail.com') {
@@ -99,7 +104,7 @@
           <div class="carousel-caption top-0 mt-4">
             <p class="mt-5 fs-3 text-uppercase">Venha descobrir um pouco sobre nós</p>
             <h1 class="display-1 fw-bolder text-capitalize">Tour pela nossa história</h1>
-            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="sobrenos.html">Clique aqui</a>
+            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="sobrenos.php">Clique aqui</a>
           </div>
         </div>
         <div class="carousel-item c-item">
@@ -108,7 +113,7 @@
           <div class="carousel-caption top-0 mt-4">
             <p class="text-uppercase fs-3 mt-5">Nosso produtos</p>
             <p class="display-1 fw-bolder text-capitalize">Pronto para compras</p>
-            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="#">Clique aqui</a>
+            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="produtos.php">Clique aqui</a>
           </div>
         </div>
         <div class="carousel-item c-item">
@@ -116,7 +121,7 @@
           <div class="carousel-caption top-0 mt-4">
             <p class="text-uppercase fs-3 mt-5">conheça nossos Departamentos</p>
             <p class="display-1 fw-bolder text-capitalize">Venha nos conhecer </p>
-            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="produtos.html">Clique aqui</a>
+            <a class="btn btn-primary px-4 py-2 fs-5 mt-5" href="produtos.php">Clique aqui</a>
           </div>
         </div>
       </div>
@@ -140,7 +145,7 @@
           <p class="vd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nam facere atque voluptatem
             necessitatibus ratione explicabo temporibus vero dicta. Labore, quam voluptates tenetur quo fugiat alias
             quas pariatur dolor eveniet.</p>
-          <p><a class="btn btn-secondary deta btn-text" href="sobrenos.html">Veja detalhes &raquo;</a></p>
+          <p><a class="btn btn-secondary deta btn-text" href="sobrenos.php">Veja detalhes &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="bd-placeholder-img rounded-circle ajd"
@@ -150,7 +155,7 @@
             deleniti rem
             tenetur fugiat sunt atque iusto natus quos quasi mollitia dolore, ab officiis ducimus nostrum hic kwe esd ud
             jsjdus jjdu assss ewwe q qw dsd w.</p>
-          <p><a class="btn btn-secondary deta btn-text" href="produtos.html">Veja detalhes &raquo;</a></p>
+          <p><a class="btn btn-secondary deta btn-text" href="produtos.php">Veja detalhes &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="bd-placeholder-img rounded-circle Obj"
@@ -160,7 +165,7 @@
             blanditiis
             iste dolores eos non fugiat deleniti provident cupiditate, quisquam delectus necessitatibus. Impedit debitis
             ratione tempora distinctio.</p>
-          <p><a class="btn btn-secondary deta btn-text" href="contato.html">Veja detalhes &raquo;</a></p>
+          <p><a class="btn btn-secondary deta btn-text" href="#footer">Veja detalhes &raquo;</a></p>
         </div>
       </div>
       <div class="album py-5 vd">

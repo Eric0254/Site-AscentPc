@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-	<title>ByBikes - Bicicletas/aluguel</title>
+	<title>AscentPc</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
-	<link rel="icon" type="imagem/png" href="../produtos/_img/logo.png" />
+	<link rel="shortcut icon" href="../img/LogoLoja.png" type="image/x-icon" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<!--===============================================================================================-->
@@ -49,11 +49,11 @@
 <body>
 
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('images/bg-02.jpg');">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<span class="login100-form-logo">
-						<i class="zmdi zmdi-bike"></i>
+					<i class="fa fa-user" style="color: #000000;"></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
